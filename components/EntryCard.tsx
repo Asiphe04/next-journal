@@ -12,7 +12,7 @@ async function deleteEntry(id:string) {
  await fetch (`/api/entry/delete?id=${id}`,{
   method: "DELETE"
  }) 
-
+window.location.reload()
 }
 
 export default function EntryCard({id, title, content, mood}: Props) {
@@ -25,6 +25,10 @@ export default function EntryCard({id, title, content, mood}: Props) {
         <footer>
             {mood}
             <button onClick={()=>deleteEntry(id)}>Delete</button>
+          
+            <a href={`/entry/edit?id=${id}`} role='button'>Edit </a>
+          
+          
         </footer>
       </article>
     )

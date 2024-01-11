@@ -1,3 +1,4 @@
+export const revalidate = 10;
 import EntryCard from "@/components/EntryCard"
 import prisma from "@/lib/prisma"
 
