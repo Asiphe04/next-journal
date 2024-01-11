@@ -12,6 +12,7 @@ async function deleteEntry(id:string) {
  await fetch (`/api/entry/delete?id=${id}`,{
   method: "DELETE"
  }) 
+
 }
 
 export default function EntryCard({id, title, content, mood}: Props) {
