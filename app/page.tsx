@@ -1,6 +1,17 @@
+import EntryCard from "@/components/EntryCard"
+import prisma from "@/lib/prisma"
 
-export default function Home() {
+export default async function Home() {
+ const entries= await prisma.entry.findMany({
+  orderBy: {
+    createdAt: "desc"
+  }
+ }) 
   return (
-   <h1>Hello</h1>
-  )
+  <>
+  {entries.map((entry)=>(
+ <EntryCard key={entry.id} {...entry} />
+ ))}
+  </>
+  );
 }

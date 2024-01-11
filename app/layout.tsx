@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import '@picocss/pico'
 
 export const metadata: Metadata = {
@@ -13,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body >
+        
       <main className='container'>
+        <Navbar/>
      {children}
       </main>
       </body>
